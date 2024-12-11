@@ -1,6 +1,7 @@
 {
   "name": "cd",
   "version": "1.0.0",
+  "type": "module",
   "description": "<p align=\"center\">   <img width=\"200px\" src=\"docs/supportbank-logo.png\" alt=\"Supportbank Logo\" /> </p>",
   "main": "index.js",
   "directories": {
@@ -21,7 +22,11 @@
   },
   "author": "",
   "license": "ISC",
+ 
   "devDependencies": {
     "mocha": "^11.0.1"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
   }
 }
