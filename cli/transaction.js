@@ -49,4 +49,31 @@ transactionController
   
   transactionController.addCommand(currencyCommand);
 
+  // Interest 4%
+  // I = (4/100) * £1500
+  // I = 60
+  // I over 12 years = 60 * 12
+  // I over 12 years = £720  + £1500 
+  // = £2220 
+
+  //Added below
+
+  const investCommand = new Command('invest'); 
+  investCommand .command('simple <principal> <rate> <years>') 
+  .description('Calculate the projected value of an investment with simple interest') 
+  .action((principal, rate, years) => { 
+    const projectedValue = principal * (1 + (rate / 100) * years); 
+    console.log(`The projected value of the investment with simple interest is £${projectedValue.toFixed(2)}`); 
+  }); 
+  
+  investCommand 
+  .command('compound <principal> <rate> <years>') 
+  .description('Calculate the projected value of an investment with compound interest') 
+  .action((principal, rate, years) => { 
+    const projectedValue = principal * Math.pow((1 + (rate / 100)), years) 
+    console.log(`The projected value of the investment with compound interest is £${projectedValue.toFixed(2)}`) 
+  }) 
+  
+  transactionController.addCommand(investCommand);
+
 export default transactionController
