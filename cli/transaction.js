@@ -59,7 +59,8 @@ transactionController
   //Added below
 
   const investCommand = new Command('invest'); 
-  investCommand .command('simple <principal> <rate> <years>') 
+  investCommand 
+  .command('simple <principal> <rate> <years>') 
   .description('Calculate the projected value of an investment with simple interest') 
   .action((principal, rate, years) => { 
     const projectedValue = principal * (1 + (rate / 100) * years); 
