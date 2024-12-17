@@ -30,9 +30,9 @@ export async function readJSONTransactions() {
 // // - Parses it into JSON
 // // - returns a string with the name, age and email from the object
 
-function exercise1() { 
+async function exercise1() { 
   const path = new URL('../data/Example.Json', import.meta.url)
-  const data = fs.readFile(path)
+  const data = await fs.readFile(path)
 
   const obj = JSON.parse(data)
 
@@ -41,17 +41,20 @@ function exercise1() {
   return obj.name
 }
 
+console.log (await exercise1())
 
 
-function exercise2() {
+async function exercise2() {
   const path = new URL('../data/Example.Json', import.meta.url)
-  const data = fs.readFile(path)
+  const data = await fs.readFile(path)
 
   const obj = JSON.parse(data)
+
+  console.log(obj)
 
 
   return `name: ${obj.name}, Age: ${obj.age}, Email: ${obj.email}`
 }
   
-
+console.log (await exercise2())
 
