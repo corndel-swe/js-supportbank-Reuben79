@@ -39,5 +39,19 @@ function exercise1() {
   console.log ("hello world")
 
   return obj.name
-
 }
+
+
+
+function exercise2() {
+  const path = new URL('../data/Example.Json', import.meta.url)
+  const data = fs.readFile(path)
+
+  const obj = JSON.parse(data)
+
+
+  return `name: ${obj.name}, Age: ${obj.age}, Email: ${obj.email}`
+}
+  
+
+
