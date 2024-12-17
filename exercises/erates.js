@@ -4,6 +4,8 @@ export async function getLatestExchangeRates(appID) {
 
  const data = await response.json()
 
- return data.getLatestExchangeRates
+ return data.rates;
+
+ 
 
 }
